@@ -44,9 +44,14 @@ export class LoginPageComponent implements OnInit {
         e.userPassword === tempUser.userPassword
       ) {
         console.log('Success!');
-        localStorage.setItem('user', JSON.stringify(tempUser));
+        localStorage.setItem('user', JSON.stringify(e));
         window.alert('Login Successful!');
-        this.router.navigate(['/home']);
+        // this.router.navigate(['/home']);
+        if (e.role === 'admin') {
+          this.router.navigate(['/admin']);
+        } else {
+          this.router.navigate(['/home']);
+        }
       } else {
         console.log('Denied!');
       }

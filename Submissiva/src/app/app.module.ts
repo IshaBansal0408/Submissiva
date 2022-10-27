@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './Component/home-page/home-page.component';
 import { LoginPageComponent } from './Component/login-page/login-page.component';
 import { RegisterPageComponent } from './Component/register-page/register-page.component';
+import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
+import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { RegisterPageComponent } from './Component/register-page/register-page.c
     HomePageComponent,
     LoginPageComponent,
     RegisterPageComponent,
+    AdminDashboardComponent,
+    AllActiveUsersComponent,
   ],
   imports: [
     BrowserModule,

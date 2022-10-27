@@ -1,0 +1,75 @@
+<div
+  class="jumbotron"
+  style="
+    height: 50vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/adminDashBack.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  "
+>
+  <h1>Welcome {{ uName }}!</h1>
+  <br />
+  <img src="../assets/img/Logo_2.png" alt="" height="150px" /> <br />
+  <br />
+  <h3>You are the Admin of the Website</h3>
+  <p style="font-size: x-large">
+    The role of an admin is vital and remember you have the most power here! BUT
+    remember
+    <b><i>"With great power comes great responsibilities"</i></b>
+  </p>
+</div>
+<div class="card-group" style="padding: 50px">
+  <div class="card" style="border: 2px solid black">
+    <div class="card-body" style="text-align: center">
+      <h3 class="card-title">View All the Users of Submissiva</h3>
+      <img src="../../assets/img/UsersImg.jpg" alt="" height="300px" />
+      <p class="card-text" style="font-size: xx-large">
+        Know About all the current active users of your website!
+      </p>
+      <a
+        class="btn btn-info btn-lg"
+        style="width: 100%"
+        [routerLink]="['/all-Users']"
+        >VIEW ALL USERS</a
+      >
+    </div>
+  </div>
+  &nbsp;&nbsp;
+  <div class="card" style="border: 2px solid black">
+    <div class="card-body" style="text-align: center">
+      <h3 class="card-title">View All the Ideas of Submissiva</h3>
+      <img src="../../assets/img/IdeaImg.jpg" alt="" height="300px" />
+      <p class="card-text" style="font-size: xx-large">
+        Explore all the unique and mind-blowing ideas present on the platform!
+      </p>
+      <a
+        [routerLink]="['/all-ideas']"
+        class="btn btn-info btn-lg"
+        style="width: 100%"
+        >VIEW ALL IDEAS</a
+      >
+    </div>
+  </div>
+  &nbsp;&nbsp;
+  <div class="card" style="border: 2px solid black">
+    <div class="card-body" style="text-align: center">
+      <h3 class="card-title">View All the Categories for Ideas</h3>
+      <img src="../../assets/img/categoryImg.jpg" alt="" height="250px" />
+      <p class="card-text" style="font-size: xx-large">
+        Explore and Manage various categories present on the platform!
+      </p>
+      <a
+        href="#"
+        class="btn btn-info btn-lg"
+        style="width: 100%"
+        [routerLink]="['/categories']"
+        >MANAGE THE CATEGORIES</a
+      >
+    </div>
+  </div>
+</div>
+<br /><br /><br />
