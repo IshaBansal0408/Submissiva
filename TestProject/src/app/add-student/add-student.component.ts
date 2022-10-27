@@ -1,4 +1,6 @@
-import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { StudentService } from './../Service/Student/student.service';
+import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,10 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-student.component.css'],
 })
 export class AddStudentComponent implements OnInit {
-  constructor() {}
+  public addForm: FormGroup;
+
+  constructor(
+    public service: StudentService,
+    public formbuilder: FormBuilder,
+    private router: Router
+  ) {
+    // this.addForm = this.formbuilder.group({
+    //   stuName: [''],
+    //   stuEmail: [''],
+    //   stuFees: [''],
+    // });
+    this.addForm = new FormGroup({
+      stuName: new FormControl(''),
+      stuEmail: new FormControl(''),
+      stuFees: new FormControl(''),
+    });
+  }
 
   ngOnInit(): void {}
-  addNewStudent(form: NgForm) {
-    console.log(form.value);
+  onSubmit() {
+    this.service.createStudent(this.addForm.value);
+    console.log(this.addForm.value);
+
+    // this.router.navigate(['/all']);
   }
 }
