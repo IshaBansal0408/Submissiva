@@ -1,0 +1,115 @@
+<div
+  class="jumbotron"
+  style="
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/loginBack.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  "
+>
+  <form
+    [formGroup]="editUserForm"
+    (ngSubmit)="editUser()"
+    novalidate
+    style="
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.8)
+      );
+      padding: 50px;
+      color: black;
+      width: fit-content;
+      height: fit-content;
+      margin-right: auto;
+      margin-left: auto;
+    "
+  >
+    <h1>Edit the User Details in the following form!</h1>
+    <div class="form-row">
+      <div class="col-md-4 mb-2">
+        <label for="firstName" class="form-label">First name</label>
+        <input
+          type="text"
+          class="form-control is-valid"
+          id="firstName"
+          placeholder="First name"
+          required
+          formControlName="firstName"
+        />
+      </div>
+      <div class="col-md-4 mb-2">
+        <label for="lastName">Last name</label>
+        <input
+          type="text"
+          class="form-control is-valid"
+          id="lastName"
+          placeholder="Last name"
+          required
+          formControlName="lastName"
+        />
+      </div>
+      <div class="col-md-4 mb-2">
+        <label for="role">Your Role</label>
+        <input
+          type="text"
+          class="form-control is-valid"
+          id="role"
+          formControlName="role"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-2">
+        <label for="UserName">Username</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupPrepend3">@</span>
+          </div>
+          <input
+            type="text"
+            class="form-control is-invalid"
+            id="userName"
+            placeholder="UserName"
+            formControlName="userName"
+          />
+          <br />
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="userEmail">Email Address</label>
+        <input
+          type="email"
+          class="form-control is-valid"
+          id="userEmail"
+          placeholder="Email Address"
+          required
+          formControlName="userEmail"
+        />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="userPassword">Password</label>
+        <input
+          type="text"
+          class="form-control is-valid"
+          id="userPassword"
+          placeholder="Password"
+          required
+          formControlName="userPassword"
+        />
+      </div>
+
+      <button
+        class="btn btn-success btn-lg"
+        type="submit"
+        style="width: 100%"
+        [disabled]="!editUserForm.valid"
+      >
+        Update User!
+      </button>
+    </div>
+  </form>
+</div>

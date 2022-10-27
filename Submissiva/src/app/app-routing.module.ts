@@ -1,3 +1,4 @@
+import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
 import { RegisterPageComponent } from './Component/register-page/register-page.component';
 import { LoginPageComponent } from './Component/login-page/login-page.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'all-users', component: AllActiveUsersComponent },
+  { path: 'edit-user/:id', component: EditUserComponent },
 ];
 
 @NgModule({

@@ -13,6 +13,7 @@ import { LoginPageComponent } from './Component/login-page/login-page.component'
 import { RegisterPageComponent } from './Component/register-page/register-page.component';
 import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
+import { EditUserComponent } from './Component/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AllActiveUsersComponent } from './Component/all-active-users/all-active
     RegisterPageComponent,
     AdminDashboardComponent,
     AllActiveUsersComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,5 @@ export class AdminDashboardComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('user')!);
   uName = this.user.firstName + ' ' + this.user.lastName;
 
-  ngOnInit(): void {
-    // console.log(this.user.userName);
-  }
+  ngOnInit(): void {}
 }

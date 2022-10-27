@@ -32,17 +32,18 @@ export class EmployeeService {
   }
 
   // 3. Update User Data
-  updateStudent(user: Employee, id: any) {
+  updateUser(user: Employee, id: any) {
     return this.firestore.collection('user-collection').doc(id).update({
       firstName: user.firstName,
       lastName: user.lastName,
       userName: user.userName,
+      userEmail: user.userEmail,
       userPassword: user.userPassword,
     });
   }
 
   // 4. Delete User Data
-  deleteStudent(user: any) {
+  deleteUser(user: any) {
     return this.firestore.collection('user-collection').doc(user.id).delete();
   }
 }
