@@ -1,1 +1,91 @@
-<p>manage-categories works!</p>
+<div
+  class="jumbotron"
+  style="
+    height: 90vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/categoryBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 100px;
+  "
+>
+  <h1>Here are all the Categories Available</h1>
+  <br /><br />
+  <div
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div class="row row-cols-1 row-cols-md-5 g-4">
+      <div
+        class="card bg-light mb-3"
+        style="width: 30rem; margin: 30px"
+        *ngFor="let c of allCategories; let i = index"
+      >
+        <div class="card-header bg-info text-light">
+          {{ c.categoryName }}
+        </div>
+        <div class="card-body text-dark">
+          <p class="card-text">
+            {{ c.categoryDescription }}
+          </p>
+        </div>
+        <button class="btn btn-danger" (click)="deleteCat(c)">
+          Delete Category
+        </button>
+      </div>
+    </div>
+    <form
+      [formGroup]="newCat"
+      (ngSubmit)="addNewCat()"
+      novalidate
+      style="
+        background: linear-gradient(
+          rgba(255, 255, 255, 0.8),
+          rgba(255, 255, 255, 0.8)
+        );
+        padding: 50px;
+        color: black;
+        width: 1000px;
+        height: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+      "
+    >
+      <h3>Want to add a new category?</h3>
+      <div class="form-group">
+        <label for="name" class="form-label">Name of the Category</label>
+        <input
+          type="text"
+          class="form-control is-valid"
+          id="name"
+          placeholder="Category Name"
+          required
+          formControlName="categoryName"
+        />
+      </div>
+      <div class="form-group">
+        <label for="Idea_Description">Type the description of Category</label>
+        <textarea
+          class="form-control"
+          id="Idea_Description"
+          rows="3"
+          required
+          formControlName="categoryDescription"
+          placeholder="Enter the description of the Category"
+        ></textarea>
+      </div>
+      <div>
+        <button
+          class="btn btn-success btn-lg"
+          type="submit"
+          style="width: 100%"
+          [disabled]="!newCat.valid"
+        >
+          Add Your Category on the Dashboard!
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

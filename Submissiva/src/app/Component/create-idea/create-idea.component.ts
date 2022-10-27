@@ -1,3 +1,5 @@
+import { Category } from './../../Class/Category/category.model';
+import { CategoryService } from './../../Service/Category/category.service';
 import { FormGroup, FormControl } from '@angular/forms';
 import { IdeaService } from './../../Service/Idea/idea.service';
 import { Router } from '@angular/router';
@@ -10,7 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateIdeaComponent implements OnInit {
   public addIdea!: FormGroup;
-  constructor(private router: Router, private ideaService: IdeaService) {
+  constructor(
+    private router: Router,
+    private ideaService: IdeaService,
+    private catService: CategoryService
+  ) {
     this.addIdea = new FormGroup({
       ideaName: new FormControl(''),
       ideaCategory: new FormControl(''),
@@ -20,7 +26,18 @@ export class CreateIdeaComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  allCategories!: Category[];
+  ngOnInit(): void {
+    this.catService.getCategoryList().subscribe((res) => {
+      this.allCategories = res.map((e) => {
+        return {
+          id: e.payload.doc.id,
+          ...(e.payload.doc.data() as {}),
+        } as Category;
+      });
+      console.log(this.allCategories);
+    });
+  }
 
   createIdea() {
     this.addIdea.value.ideaOwner =
