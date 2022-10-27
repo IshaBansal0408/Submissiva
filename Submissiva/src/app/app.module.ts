@@ -14,6 +14,7 @@ import { RegisterPageComponent } from './Component/register-page/register-page.c
 import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashboard.component';
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
 import { EditUserComponent } from './Component/edit-user/edit-user.component';
+import { UserComponent } from './Component/user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { EditUserComponent } from './Component/edit-user/edit-user.component';
     AdminDashboardComponent,
     AllActiveUsersComponent,
     EditUserComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
