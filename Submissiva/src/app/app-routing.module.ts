@@ -1,3 +1,5 @@
+import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
+import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
 import { UserComponent } from './Component/user/user.component';
 import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'all-users', component: AllActiveUsersComponent },
   { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'user', component: UserComponent },
+  { path: 'all-idea', component: AllIdeasComponent },
+  { path: 'create-idea', component: CreateIdeaComponent },
 ];
 
 @NgModule({

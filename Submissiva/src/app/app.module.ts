@@ -15,6 +15,8 @@ import { AdminDashboardComponent } from './Component/admin-dashboard/admin-dashb
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
 import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { UserComponent } from './Component/user/user.component';
+import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
+import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { UserComponent } from './Component/user/user.component';
     AllActiveUsersComponent,
     EditUserComponent,
     UserComponent,
+    AllIdeasComponent,
+    CreateIdeaComponent,
   ],
   imports: [
     BrowserModule,

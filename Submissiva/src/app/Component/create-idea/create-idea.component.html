@@ -1,0 +1,111 @@
+<div
+  class="jumbotron"
+  style="
+    height: 100vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/addIdeaBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  "
+>
+  <form
+    [formGroup]="addIdea"
+    (ngSubmit)="createIdea()"
+    novalidate
+    style="
+      background: linear-gradient(
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.8)
+      );
+      padding: 50px;
+      color: black;
+      width: fit-content;
+      height: fit-content;
+      margin-right: auto;
+      margin-left: auto;
+    "
+  >
+    <!-- <h1>Your Idea is welcomed here!</h1> -->
+    <!-- <img src="../../assets/img/Logo_2.png" alt="" height="300px" /> -->
+    <h2>
+      No Idea is small of big! <br />
+      It's the thought that counts!
+    </h2>
+    <div class="form-group">
+      <label for="name" class="form-label">Name of the Idea</label>
+      <input
+        type="text"
+        class="form-control is-valid"
+        id="name"
+        placeholder="Idea Name"
+        required
+        formControlName="ideaName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="emp_name" class="form-label">Owner of the Idea</label>
+      <input
+        type="text"
+        class="form-control is-valid"
+        id="emp_name"
+        placeholder="{{ user.firstName + ' ' + user.lastName }}"
+      />
+    </div>
+    <div class="form-group">
+      <label for="category">Select Category of your Idea</label>
+      <select
+        class="form-control"
+        id="category"
+        required
+        formControlName="ideaCategory"
+      >
+        <option selected data-default>None</option>
+        <!-- <option></option> -->
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Idea_Goal">Type the Main Goal of your Idea</label>
+      <textarea
+        class="form-control"
+        id="Idea_Goal"
+        rows="3"
+        required
+        formControlName="ideaGoal"
+        placeholder="Enter the goal of your idea"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="Idea_Description">Type the description of your Idea</label>
+      <textarea
+        class="form-control"
+        id="Idea_Description"
+        rows="3"
+        required
+        formControlName="ideaDescription"
+        placeholder="Enter the description of your idea"
+      ></textarea>
+    </div>
+
+    <div>
+      <button
+        class="btn btn-success btn-lg"
+        type="submit"
+        style="width: 100%"
+        [disabled]="!addIdea.valid"
+      >
+        Add Your Idea on the Dashboard!
+      </button>
+    </div>
+    <br />
+    <button
+      class="btn btn-warning btn-lg"
+      (click)="goToDashboard()"
+      style="width: 100%"
+    >
+      Go Back to Dashboard!
+    </button>
+  </form>
+</div>
