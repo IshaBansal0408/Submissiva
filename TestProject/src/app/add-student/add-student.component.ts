@@ -16,11 +16,6 @@ export class AddStudentComponent implements OnInit {
     public formbuilder: FormBuilder,
     private router: Router
   ) {
-    // this.addForm = this.formbuilder.group({
-    //   stuName: [''],
-    //   stuEmail: [''],
-    //   stuFees: [''],
-    // });
     this.addForm = new FormGroup({
       stuName: new FormControl(''),
       stuEmail: new FormControl(''),
