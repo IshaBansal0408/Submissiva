@@ -1,0 +1,41 @@
+<div
+  class="jumbotron"
+  style="
+    height: 90vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/userDashBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 100px;
+  "
+>
+  <h1>Welcome {{ uName }}!</h1>
+  <br />
+  <img src="../assets/img/Logo_2.png" alt="" height="150px" /> <br />
+  <!-- <br />
+  <h1>You are a Normal User of the Website</h1> -->
+  <br /><br />
+  <div class="container">
+    <button
+      class="btn btn-info btn-lg"
+      style="width: 100%"
+      [routerLink]="['/add-idea']"
+    >
+      ADD A NEW IDEA!</button
+    ><br /><br />
+    <button
+      class="btn btn-dark btn-lg"
+      style="width: 100%"
+      [routerLink]="['/all-ideas']"
+    >
+      VIEW ALL INNOVATIVE IDEAS!
+    </button>
+    <br /><br />
+    <button class="btn btn-warning btn-lg" style="width: 100%">
+      VIEW ACTIVE POLLS!
+    </button>
+  </div>
+</div>

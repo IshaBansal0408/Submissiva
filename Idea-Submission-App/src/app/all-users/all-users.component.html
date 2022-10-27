@@ -1,0 +1,41 @@
+<div
+  class="jumbotron"
+  style="
+    height: 90vh;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/allUsersBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 100px;
+  "
+>
+  <div class="row row-cols-1 row-cols-md-4 g-2">
+    <div
+      class="card"
+      style="width: 18rem; color: black; margin: 20px"
+      *ngFor="let e of allUsers$ | async"
+    >
+      <img
+        class="card-img-top"
+        src="../../assets/img/userIcon.jpg"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ e.firstName + " " + e.lastName }}</h5>
+        <!-- <p class="card-text"></p> -->
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Email Address : {{ e.userEmail }}</li>
+        <li class="list-group-item">Username : {{ e.userName }}</li>
+        <!-- <li class="list-group-item">Vestibulum at eros</li> -->
+      </ul>
+      <div class="card-body">
+        <button class="btn btn-warning">Update User</button> &nbsp;&nbsp;&nbsp;
+        <a href="#" class="btn btn-danger">Delete User</a>
+      </div>
+    </div>
+  </div>
+</div>

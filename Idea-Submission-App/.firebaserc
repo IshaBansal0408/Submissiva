@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "idea-submission-application": {
+      "hosting": {
+        "Idea-Submission-App": [
+          "idea-submission-application"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "idea-submission-application"
+  }
+}

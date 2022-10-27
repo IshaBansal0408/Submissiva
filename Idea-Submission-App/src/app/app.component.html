@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <img
+    src="../assets/img/Logo_2.png"
+    alt=""
+    height="80px"
+  />&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="navbar-brand" href="#" style="font-size: x-large"
+    >Welcome to Submissiva</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home" style="font-size: x-large"
+          >HOME</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="goToDashboard()" style="font-size: x-large"
+          >DASHBOARD</a
+        >
+      </li>
+    </ul>
+
+    <button
+      class="btn btn-success my-2 my-sm-0"
+      type="submit"
+      style="width: 200px"
+      (click)="login_btn()"
+    >
+      LOGIN
+    </button>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <button
+      class="btn btn-warning my-2 my-sm-0"
+      type="submit"
+      style="width: 200px"
+      (click)="register_btn()"
+    >
+      REGISTER</button
+    >&nbsp;&nbsp;&nbsp;&nbsp;
+    <button
+      class="btn btn-danger my-2 my-sm-0"
+      (click)="logout_btn()"
+      style="width: 200px"
+    >
+      LOGOUT</button
+    >&nbsp;&nbsp;&nbsp;&nbsp;
+    <button
+      class="btn btn-info my-2 my-sm-0"
+      [routerLink]="['/edit-user']"
+      style="width: 200px"
+    >
+      EDIT PROFILE
+    </button>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<div style="margin-top: 0px" class="footer fixed-bottom">
+  <section class="">
+    <footer class="text-center text-white" style="background-color: gray">
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © October 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Isha Bansal</a>
+      </div>
+    </footer>
+  </section>
+</div>
