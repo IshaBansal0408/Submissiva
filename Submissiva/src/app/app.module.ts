@@ -17,6 +17,7 @@ import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { UserComponent } from './Component/user/user.component';
 import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
 import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
+import { ManageCategoriesComponent } from './Component/manage-categories/manage-categories.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CreateIdeaComponent } from './Component/create-idea/create-idea.compone
     UserComponent,
     AllIdeasComponent,
     CreateIdeaComponent,
+    ManageCategoriesComponent,
   ],
   imports: [
     BrowserModule,

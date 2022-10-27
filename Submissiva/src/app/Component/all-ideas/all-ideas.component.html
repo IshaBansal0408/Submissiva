@@ -1,1 +1,74 @@
-<p>all-ideas works!</p>
+<div
+  class="jumbotron"
+  style="
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/allIdeaBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+  "
+>
+  <button
+    class="btn btn-info btn-lg"
+    style="width: 80%"
+    [routerLink]="['/create-idea']"
+  >
+    ADD A NEW IDEA
+  </button>
+  <div class="row row-cols-1 row-cols-md-6 g-3" style="padding: 50px">
+    <!-- Card -->
+    <div
+      *ngFor="let e of allIdeas; let i = index"
+      class="card card-image"
+      style="
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.9)
+          ),
+          url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        width: 800px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      "
+    >
+      <div class="text-white text-center rgba-black-strong py-5 px-4">
+        <div style="text-align: center">
+          <h1 class="pink-text">
+            <i class="fas fa-chart-pie"></i> {{ e.ideaName }}
+          </h1>
+          <h3 class="card-title pt-2">
+            <strong>Created By : {{ e.ideaOwner }}</strong>
+          </h3>
+          <p>
+            <b>Main Goal of Project :</b> <br />
+            {{ e.ideaGoal }}
+          </p>
+          <p>
+            <b>Description of the Idea : </b> <br />
+            {{ e.ideaDescription }}
+          </p>
+          <h5>Number of Upvotes : {{ e.ideaUpvotes }}</h5>
+          <h5>Number of Downvotes : {{ e.ideaDownvotes }}</h5>
+
+          <br />
+          <button class="btn btn-success btn-lg" style="width: 100%">
+            Upvote Idea!
+          </button>
+          <br />
+          <br />
+          <button class="btn btn-danger btn-lg" style="width: 100%">
+            Downvote Idea!
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Card -->
+  </div>
+</div>
