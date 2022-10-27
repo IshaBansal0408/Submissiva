@@ -1,7 +1,7 @@
+import { UserDashboardComponent } from './Component/user-dashboard/user-dashboard.component';
 import { ManageCategoriesComponent } from './Component/manage-categories/manage-categories.component';
 import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
 import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
-import { UserComponent } from './Component/user/user.component';
 import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { AllActiveUsersComponent } from './Component/all-active-users/all-active-users.component';
 import { RegisterPageComponent } from './Component/register-page/register-page.component';
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
   { path: 'all-users', component: AllActiveUsersComponent },
   { path: 'edit-user/:id', component: EditUserComponent },
-  { path: 'user', component: UserComponent },
+  { path: 'user', component: UserDashboardComponent },
   { path: 'all-idea', component: AllIdeasComponent },
   { path: 'create-idea', component: CreateIdeaComponent },
   { path: 'categories', component: ManageCategoriesComponent },

@@ -50,7 +50,7 @@ export class LoginPageComponent implements OnInit {
         if (e.role === 'admin') {
           this.router.navigate(['/admin']);
         } else {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/user']);
         }
       } else {
         console.log('Denied!');
