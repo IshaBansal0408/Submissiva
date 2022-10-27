@@ -1,5 +1,5 @@
 import { StudentService } from './../Service/Student/student.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -18,21 +18,22 @@ export class EditStudentComponent implements OnInit {
     private act: ActivatedRoute,
     private route: Router
   ) {
-    this.editForm = this.formBuilder.group({
-      stuName: [''],
-      stuEmail: [''],
-      stuFees: [''],
+    this.editForm = new FormGroup({
+      stuName: new FormControl(''),
+      stuEmail: new FormControl(''),
+      stuFees: new FormControl(''),
     });
   }
 
   ngOnInit(): void {
     const id = this.act.snapshot.paramMap.get('id');
+    // console.log('Id of the Student : ', id);
     this.service.getStudentDoc(id).subscribe((res) => {
-      this.studentRef = this.formBuilder.group({
-        stuName: [this.studentRef.stuName],
-        stuEmail: [this.studentRef.stuEmail],
-        stuFees: [this.studentRef.stuFees],
-      });
+      // console.log('Student Details : ', res);
+      this.studentRef = res;
+      // console.log('Student Details : ', res);
+      this.editForm.setValue(this.studentRef);
+      // console.log('Form Values : ', this.editForm.value);
     });
   }
 
