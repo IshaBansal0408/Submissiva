@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
 import { EditUserComponent } from './Component/edit-user/edit-user.component';
 import { EditIdeaComponent } from './Component/edit-idea/edit-idea.component';
 import { ManageCategoryComponent } from './Component/manage-category/manage-category.component';
+import { AddIdeaComponent } from './Component/add-idea/add-idea.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,11 @@ import { ManageCategoryComponent } from './Component/manage-category/manage-cate
     AllIdeasComponent,
     EditUserComponent,
     EditIdeaComponent,
-    ManageCategoryComponent
+    ManageCategoryComponent,
+    AddIdeaComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
