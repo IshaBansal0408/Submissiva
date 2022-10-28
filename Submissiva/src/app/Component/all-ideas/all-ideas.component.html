@@ -77,6 +77,15 @@
           </button>
           <hr />
           <h5>Created At : {{ e.createdAt }}</h5>
+          <button
+            class="btn btn-info btn-lg"
+            style="width: 100%"
+            (click)="downloadIdea(e)"
+            *ngIf="isAdmin"
+            routerLink="/view-idea/{{ e.id }}"
+          >
+            Download Idea!
+          </button>
         </div>
       </div>
     </div>

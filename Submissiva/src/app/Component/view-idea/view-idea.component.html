@@ -1,0 +1,45 @@
+<div class="row row-cols-1 row-cols-md-6 g-3" style="padding: 50px">
+  <!-- Card -->
+  <div
+    class="card card-image"
+    style="
+      background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 600px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    "
+  >
+    <div class="text-white text-center rgba-black-strong py-5 px-4">
+      <div style="text-align: center">
+        <img src="../../assets/img/Logo_2.png" alt="" height="200px" />
+        <br /><br />
+        <h1 class="pink-text">
+          <i class="fas fa-chart-pie"></i> {{ e.ideaName }}
+        </h1>
+        <h3 class="card-title pt-2">
+          <strong>Created By : {{ e.ideaOwner }}</strong>
+        </h3>
+        <p>
+          <b>Main Goal of Project :</b> <br />
+          {{ e.ideaGoal }}
+        </p>
+        <p>
+          <b>Description of the Idea : </b> <br />
+          {{ e.ideaDescription }}
+        </p>
+      </div>
+    </div>
+    <button
+      class="btn btn-dark btn-lg"
+      style="width: 100%"
+      (click)="printIdea()"
+    >
+      Print Idea!
+    </button>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { ViewIdeaComponent } from './Component/view-idea/view-idea.component';
 import { UserDashboardComponent } from './Component/user-dashboard/user-dashboard.component';
 import { ManageCategoriesComponent } from './Component/manage-categories/manage-categories.component';
 import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'all-idea', component: AllIdeasComponent },
   { path: 'create-idea', component: CreateIdeaComponent },
   { path: 'categories', component: ManageCategoriesComponent },
+  { path: 'view-idea/:id', component: ViewIdeaComponent },
 ];
 
 @NgModule({

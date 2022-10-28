@@ -11,10 +11,16 @@ export class AllIdeasComponent implements OnInit {
   allIdeas!: Idea[];
   upvoteMap: { [id: string]: boolean } = {};
   downvoteMap: { [id: string]: boolean } = {};
+  user: any;
+  isAdmin = false;
 
   constructor(private ideaService: IdeaService) {}
 
   ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user')!);
+    if (this.user.role === 'admin') {
+      this.isAdmin = true;
+    }
     this.ideaService.getIdeaList().subscribe((res) => {
       this.allIdeas = res.map((e) => {
         return {
@@ -47,4 +53,6 @@ export class AllIdeasComponent implements OnInit {
     this.ideaService.downvoteIdea(i, i.id);
     // console.log(i.ideaDownvotes);
   }
+
+  downloadIdea(i: any) {}
 }
