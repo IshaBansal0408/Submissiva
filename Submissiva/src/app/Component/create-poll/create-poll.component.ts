@@ -1,3 +1,6 @@
+import { PollService } from './../../Service/Poll/poll.service';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Poll } from './../../Class/Poll/poll.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Idea } from 'src/app/Class/Idea/idea.model';
 import { IdeaService } from './../../Service/Idea/idea.service';
@@ -12,7 +15,8 @@ export class CreatePollComponent implements OnInit {
   constructor(
     private ideaService: IdeaService,
     private router: Router,
-    private act: ActivatedRoute
+    private act: ActivatedRoute,
+    private pService: PollService
   ) {}
   allIdeas!: Idea[];
   filteredIdeas = new Array();
@@ -89,6 +93,7 @@ export class CreatePollComponent implements OnInit {
       }
     }
   }
+  createdPoll!: FormGroup;
   createPoll() {
     if (this.pollList.length == 0) {
       window.alert('Poll list is empty!');
@@ -105,7 +110,23 @@ export class CreatePollComponent implements OnInit {
             this.pollList[1].ideaName
         )
       ) {
-        console.log('Poll created!');
+        console.log(this.pollList);
+        var At = new Date();
+        this.createdPoll = new FormGroup({
+          pollItem1: new FormControl(this.pollList[0]),
+          pollItem2: new FormControl(this.pollList[1]),
+          pollVotes1: new FormControl(0),
+          pollVotes2: new FormControl(0),
+          pollStartAt: new FormControl(At.toLocaleDateString()),
+          pollEndAt: new FormControl(''),
+          pollWinner: new FormControl(''),
+        });
+        // console.log(this.createdPoll.value);
+        this.pService.createNewPoll(this.createdPoll.value);
+        window.alert('Poll created!');
+        // console.log(this.pollList);
+        this.pollList = [];
+        // console.log(this.pollList);
       }
     }
   }
