@@ -7,4 +7,5 @@ export class Idea {
   ideaDescription!: string;
   ideaUpvotes!: number;
   ideaDownvotes!: number;
+  createdAt!: string;
 }
