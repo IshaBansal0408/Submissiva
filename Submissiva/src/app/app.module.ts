@@ -19,6 +19,8 @@ import { AllIdeasComponent } from './Component/all-ideas/all-ideas.component';
 import { CreateIdeaComponent } from './Component/create-idea/create-idea.component';
 import { ManageCategoriesComponent } from './Component/manage-categories/manage-categories.component';
 import { ViewIdeaComponent } from './Component/view-idea/view-idea.component';
+import { CreatePollComponent } from './Component/create-poll/create-poll.component';
+import { ShowPollCatComponent } from './Component/show-poll-cat/show-poll-cat.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ViewIdeaComponent } from './Component/view-idea/view-idea.component';
     CreateIdeaComponent,
     ManageCategoriesComponent,
     ViewIdeaComponent,
+    CreatePollComponent,
+    ShowPollCatComponent,
   ],
   imports: [
     BrowserModule,

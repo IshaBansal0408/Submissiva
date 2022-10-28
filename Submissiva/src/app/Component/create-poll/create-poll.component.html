@@ -10,25 +10,13 @@
     color: white;
   "
 >
-  <button
-    class="btn btn-info btn-lg"
-    style="width: 80%"
-    [routerLink]="['/create-idea']"
-  >
-    ADD A NEW IDEA
+  <button class="btn btn-info btn-lg" style="width: 80%" (click)="createPoll()">
+    GENERATE POLL
   </button>
-  <br /><br /><button
-    class="btn btn-dark btn-lg"
-    style="width: 80%"
-    [routerLink]="['/poll-cat']"
-  >
-    CREATE A NEW POLL
-  </button>
-
   <div class="row row-cols-1 row-cols-md-6 g-3" style="padding: 50px">
     <!-- Card -->
     <div
-      *ngFor="let e of allIdeas; let i = index"
+      *ngFor="let e of filteredIdeas; let i = index"
       class="card card-image"
       style="
         background-image: linear-gradient(
@@ -65,33 +53,12 @@
           <h5>Number of Upvotes : {{ e.ideaUpvotes }}</h5>
           <h5>Number of Downvotes : {{ e.ideaDownvotes }}</h5>
 
-          <br />
-          <button
+          <br /><button
             class="btn btn-success btn-lg"
             style="width: 100%"
-            (click)="upvoteIdea(e)"
-            [disabled]="upvoteMap[e.id] == true"
+            (click)="addToPoll(e)"
           >
-            Upvote Idea!
-          </button>
-          <br />
-          <br />
-          <button
-            class="btn btn-danger btn-lg"
-            style="width: 100%"
-            (click)="downvoteIdea(e)"
-          >
-            Downvote Idea!
-          </button>
-          <hr />
-          <h5>Created At : {{ e.createdAt }}</h5>
-          <button
-            class="btn btn-info btn-lg"
-            style="width: 100%"
-            *ngIf="isAdmin"
-            routerLink="/view-idea/{{ e.id }}"
-          >
-            Download Idea!
+            Add to the Poll!
           </button>
         </div>
       </div>

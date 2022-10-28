@@ -56,7 +56,7 @@ export class IdeaService {
       });
   }
 
-  // 5. Upvote Idea
+  // 6. Upvote Idea
   downvoteIdea(idea: Idea, id: any) {
     return this.firestore
       .collection('idea-collection')
@@ -64,5 +64,10 @@ export class IdeaService {
       .update({
         ideaDownvotes: idea.ideaDownvotes + 1,
       });
+  }
+
+  // 7. Get Idea by Category
+  getAllIdeasByCategory(cat: any) {
+    return this.firestore.collection('idea-collection').doc(cat).valueChanges();
   }
 }

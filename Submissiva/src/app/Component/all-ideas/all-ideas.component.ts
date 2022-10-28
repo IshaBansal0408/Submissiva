@@ -53,6 +53,4 @@ export class AllIdeasComponent implements OnInit {
     this.ideaService.downvoteIdea(i, i.id);
     // console.log(i.ideaDownvotes);
   }
-
-  downloadIdea(i: any) {}
 }
