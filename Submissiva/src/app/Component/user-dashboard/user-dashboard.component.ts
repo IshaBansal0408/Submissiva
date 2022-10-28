@@ -18,6 +18,6 @@ export class UserDashboardComponent implements OnInit {
     this.router.navigate(['/all-idea']);
   }
   activePoll() {
-    // this.router.navigate(['/polls']);
+    this.router.navigate(['/all-polls']);
   }
 }
