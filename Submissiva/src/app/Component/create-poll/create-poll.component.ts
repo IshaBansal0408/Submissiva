@@ -32,7 +32,7 @@ export class CreatePollComponent implements OnInit {
       });
       // console.log(this.allIdeas);
       this.allIdeas.forEach((e) => {
-        if (e.ideaCategory != cat) {
+        if (e.ideaCategory === cat) {
           // console.log(e);
           this.filteredIdeas.push(e);
         }

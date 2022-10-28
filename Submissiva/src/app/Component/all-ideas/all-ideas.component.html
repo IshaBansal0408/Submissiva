@@ -21,6 +21,7 @@
     class="btn btn-dark btn-lg"
     style="width: 80%"
     [routerLink]="['/poll-cat']"
+    *ngIf="isAdmin"
   >
     CREATE A NEW POLL
   </button>
@@ -51,6 +52,7 @@
           <h1 class="pink-text">
             <i class="fas fa-chart-pie"></i> {{ e.ideaName }}
           </h1>
+          <h2 style="background-color: lightcoral">{{ e.ideaCategory }}</h2>
           <h3 class="card-title pt-2">
             <strong>Created By : {{ e.ideaOwner }}</strong>
           </h3>
