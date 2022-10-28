@@ -45,4 +45,24 @@ export class IdeaService {
   deleteUser(idea: any) {
     return this.firestore.collection('idea-collection').doc(idea.id).delete();
   }
+
+  // 5. Upvote Idea
+  upvoteIdea(idea: Idea, id: any) {
+    return this.firestore
+      .collection('idea-collection')
+      .doc(id)
+      .update({
+        ideaUpvotes: idea.ideaUpvotes + 1,
+      });
+  }
+
+  // 5. Upvote Idea
+  downvoteIdea(idea: Idea, id: any) {
+    return this.firestore
+      .collection('idea-collection')
+      .doc(id)
+      .update({
+        ideaDownvotes: idea.ideaDownvotes + 1,
+      });
+  }
 }

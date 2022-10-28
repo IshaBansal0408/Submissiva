@@ -58,12 +58,21 @@
           <h5>Number of Downvotes : {{ e.ideaDownvotes }}</h5>
 
           <br />
-          <button class="btn btn-success btn-lg" style="width: 100%">
+          <button
+            class="btn btn-success btn-lg"
+            style="width: 100%"
+            (click)="upvoteIdea(e)"
+            [disabled]="upvoteMap[e.id] == true"
+          >
             Upvote Idea!
           </button>
           <br />
           <br />
-          <button class="btn btn-danger btn-lg" style="width: 100%">
+          <button
+            class="btn btn-danger btn-lg"
+            style="width: 100%"
+            (click)="downvoteIdea(e)"
+          >
             Downvote Idea!
           </button>
           <hr />
