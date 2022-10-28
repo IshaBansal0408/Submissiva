@@ -1,0 +1,100 @@
+<div
+  class="jumbotron"
+  style="
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url(../../assets/img/allUsersBack.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 100px;
+  "
+>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Idea 1</th>
+        <th scope="col">Idea 2</th>
+        <th scope="col">Ended At</th>
+        <th scope="col">Poll Winner</th>
+        <th scope="col" *ngIf="isAdmin">End Poll</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of allPolls; let i = index">
+        <th>{{ i + 1 }}</th>
+        <th>{{ p.category }}</th>
+        <th>{{ p.pollStartAt }}</th>
+        <th style="color: black">
+          <div class="card" style="width: 30rem">
+            <div class="card-body">
+              <h5 class="card-title">{{ p.pollItem1.ideaName }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {{ p.pollItem1.ideaOwner }}
+              </h6>
+              <p class="card-text">
+                {{ p.pollItem1.ideaGoal }}
+              </p>
+              <p class="card-text">
+                {{ p.pollItem1.ideaDescription }}
+              </p>
+              <p class="card-text" style="background-color: lightgreen">
+                Number of Votes :
+                {{ p.pollVotes1 }}
+              </p>
+              <button
+                class="btn btn-info"
+                (click)="voteIdea1(p)"
+                [disabled]="!p.vote1Active"
+              >
+                VOTE FOR THE IDEA
+              </button>
+            </div>
+          </div>
+        </th>
+        <th style="color: black">
+          <div class="card" style="width: 30rem">
+            <div class="card-body">
+              <h5 class="card-title">{{ p.pollItem2.ideaName }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                {{ p.pollItem2.ideaOwner }}
+              </h6>
+              <p class="card-text">
+                {{ p.pollItem2.ideaGoal }}
+              </p>
+              <p class="card-text">
+                {{ p.pollItem2.ideaDescription }}
+              </p>
+              <p class="card-text" style="background-color: lightgreen">
+                Number of Votes :
+                {{ p.pollVotes2 }}
+              </p>
+              <button
+                class="btn btn-info"
+                (click)="voteIdea2(p)"
+                [disabled]="!p.vote2Active"
+              >
+                VOTE FOR THE IDEA
+              </button>
+            </div>
+          </div>
+        </th>
+        <th>{{ p.pollEndAt }}</th>
+        <th>{{ p.pollWinner }}</th>
+        <th>
+          <button
+            class="btn btn-danger"
+            *ngIf="isAdmin && p.isActive"
+            (click)="endPoll(p)"
+          >
+            End Poll
+          </button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,3 +1,4 @@
+import { AllPollsComponent } from './Component/all-polls/all-polls.component';
 import { ShowPollCatComponent } from './Component/show-poll-cat/show-poll-cat.component';
 import { CreatePollComponent } from './Component/create-poll/create-poll.component';
 import { ViewIdeaComponent } from './Component/view-idea/view-idea.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'view-idea/:id', component: ViewIdeaComponent },
   { path: 'create-poll/:categoryName', component: CreatePollComponent },
   { path: 'poll-cat', component: ShowPollCatComponent },
+  { path: 'all-polls', component: AllPollsComponent },
 ];
 
 @NgModule({

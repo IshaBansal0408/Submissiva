@@ -24,4 +24,44 @@ export class PollService {
   }
 
   // 2. Get All Polls
+  getPollList() {
+    return this.firestore.collection('poll-collection').snapshotChanges();
+  }
+
+  // 3. End the Poll
+  EndPoll(poll: Poll, id: any) {
+    var d = new Date();
+    var w: string;
+    if (poll.pollVotes1 > poll.pollVotes2) {
+      w = poll.pollItem1.ideaName;
+    } else if (poll.pollVotes1 < poll.pollVotes2) {
+      w = poll.pollItem2.ideaName;
+    } else {
+      w = "It's a Draw";
+    }
+    console.log(w);
+
+    return this.firestore.collection('poll-collection').doc(id).update({
+      isActive: poll.isActive,
+      vote1Active: poll.vote1Active,
+      vote2Active: poll.vote2Active,
+      pollEndAt: d.toLocaleDateString(),
+      pollWinner: w,
+    });
+  }
+
+  // 4. Increase Votes for 1st Idea
+  voteIdea1(poll: Poll, id: any) {
+    return this.firestore
+      .collection('poll-collection')
+      .doc(id)
+      .update({ pollVotes1: poll.pollVotes1 + 1 });
+  }
+  // 5. Increase Votes for 1st Idea
+  voteIdea2(poll: Poll, id: any) {
+    return this.firestore
+      .collection('poll-collection')
+      .doc(id)
+      .update({ pollVotes2: poll.pollVotes2 + 1 });
+  }
 }

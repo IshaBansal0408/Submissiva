@@ -21,6 +21,7 @@ import { ManageCategoriesComponent } from './Component/manage-categories/manage-
 import { ViewIdeaComponent } from './Component/view-idea/view-idea.component';
 import { CreatePollComponent } from './Component/create-poll/create-poll.component';
 import { ShowPollCatComponent } from './Component/show-poll-cat/show-poll-cat.component';
+import { AllPollsComponent } from './Component/all-polls/all-polls.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ShowPollCatComponent } from './Component/show-poll-cat/show-poll-cat.co
     ViewIdeaComponent,
     CreatePollComponent,
     ShowPollCatComponent,
+    AllPollsComponent,
   ],
   imports: [
     BrowserModule,

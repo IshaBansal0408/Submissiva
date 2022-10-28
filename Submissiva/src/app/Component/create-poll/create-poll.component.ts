@@ -1,6 +1,5 @@
 import { PollService } from './../../Service/Poll/poll.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Poll } from './../../Class/Poll/poll.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Idea } from 'src/app/Class/Idea/idea.model';
 import { IdeaService } from './../../Service/Idea/idea.service';
@@ -20,8 +19,10 @@ export class CreatePollComponent implements OnInit {
   ) {}
   allIdeas!: Idea[];
   filteredIdeas = new Array();
+  category: any;
   ngOnInit(): void {
     const cat = this.act.snapshot.paramMap.get('categoryName');
+    this.category = cat;
     this.ideaService.getIdeaList().subscribe((res) => {
       this.allIdeas = res.map((e) => {
         return {
@@ -113,6 +114,7 @@ export class CreatePollComponent implements OnInit {
         console.log(this.pollList);
         var At = new Date();
         this.createdPoll = new FormGroup({
+          category: new FormControl(this.category),
           pollItem1: new FormControl(this.pollList[0]),
           pollItem2: new FormControl(this.pollList[1]),
           pollVotes1: new FormControl(0),
@@ -120,6 +122,9 @@ export class CreatePollComponent implements OnInit {
           pollStartAt: new FormControl(At.toLocaleDateString()),
           pollEndAt: new FormControl(''),
           pollWinner: new FormControl(''),
+          isActive: new FormControl(true),
+          vote1Active: new FormControl(true),
+          vote2Active: new FormControl(true),
         });
         // console.log(this.createdPoll.value);
         this.pService.createNewPoll(this.createdPoll.value);
