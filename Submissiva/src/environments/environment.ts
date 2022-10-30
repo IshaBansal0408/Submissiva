@@ -10,8 +10,8 @@ export const environment = {
     projectId: 'idea-submission-application',
     storageBucket: 'idea-submission-application.appspot.com',
     messagingSenderId: '888224823090',
-    appId: '1:888224823090:web:5f25f72db31b4a9e63c92b',
-    measurementId: 'G-HYHV3VNW3F',
+    appId: '1:888224823090:web:a911799f225ff07863c92b',
+    measurementId: 'G-F6V6WTYMG8',
   },
 };
 

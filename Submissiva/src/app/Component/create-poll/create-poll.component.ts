@@ -39,6 +39,13 @@ export class CreatePollComponent implements OnInit {
         // console.log(e);
         // console.log(this.filteredIdeas);
       });
+
+      if (this.filteredIdeas.length < 2) {
+        window.alert(
+          "Poll Can't be created.\nNot enough ideas present in the category"
+        );
+        window.history.back();
+      }
     });
   }
   pollList = new Array();

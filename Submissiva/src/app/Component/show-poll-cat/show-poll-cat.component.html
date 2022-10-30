@@ -11,25 +11,32 @@
     color: white;
   "
 >
-  <div style="text-align: center">
-    <h1>Choose the Category to Create a Poll</h1>
-    <div
-      class="card w-30 text-dark"
-      *ngFor="let c of allCategories; let i = index"
-      style="margin: 20px"
-    >
-      <div class="card-body">
-        <h5 class="card-title">{{ c.categoryName }}</h5>
-        <p class="card-text">
-          {{ c.categoryDescription }}
-        </p>
-        <a
-          class="btn btn-warning"
-          style="width: 100%"
-          routerLink="/create-poll/{{ c.categoryName }}"
-          >Choose {{ c.categoryName }} Category</a
+  <div class="container-fluid">
+    <section>
+      <div class="row" style="color: black">
+        <div
+          class="col-xl-2 col-sm-8 col-12 mb-4"
+          style="height: 200px"
+          *ngFor="let c of allCategories; let i = index"
         >
+          <div class="card bg-secondary text-light" style="height: fit-content">
+            <div class="card-body">
+              <div class="d-flex justify-content-between px-md-1">
+                <div class="text-end">
+                  <h3>{{ c.categoryName }}</h3>
+                  <p>{{ c.categoryDescription }}</p>
+                  <a
+                    class="btn btn-outline-light"
+                    style="width: 100%"
+                    routerLink="/create-poll/{{ c.categoryName }}"
+                    >Choose {{ c.categoryName }} Category</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </div>
