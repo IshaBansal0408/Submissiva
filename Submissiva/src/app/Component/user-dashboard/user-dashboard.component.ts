@@ -20,4 +20,7 @@ export class UserDashboardComponent implements OnInit {
   activePoll() {
     this.router.navigate(['/all-polls']);
   }
+  showCat() {
+    this.router.navigate(['/categories']);
+  }
 }

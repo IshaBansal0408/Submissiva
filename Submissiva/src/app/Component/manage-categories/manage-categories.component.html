@@ -31,12 +31,13 @@
             {{ c.categoryDescription }}
           </p>
         </div>
-        <button class="btn btn-danger" (click)="deleteCat(c)">
+        <button class="btn btn-danger" (click)="deleteCat(c)" *ngIf="isAdmin">
           Delete Category
         </button>
       </div>
     </div>
     <form
+      *ngIf="isAdmin"
       [formGroup]="newCat"
       (ngSubmit)="addNewCat()"
       novalidate

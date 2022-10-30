@@ -12,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 export class ManageCategoriesComponent implements OnInit {
   public newCat!: FormGroup;
   allCategories!: Category[];
+  isAdmin = false;
+  user = JSON.parse(localStorage.getItem('user')!);
   constructor(private catService: CategoryService, private router: Router) {
     this.newCat = new FormGroup({
       categoryName: new FormControl(''),
@@ -28,6 +30,9 @@ export class ManageCategoriesComponent implements OnInit {
       });
       console.log(this.allCategories);
     });
+    if (this.user.role === 'admin') {
+      this.isAdmin = true;
+    }
   }
   addNewCat() {
     console.log(this.newCat.value);
