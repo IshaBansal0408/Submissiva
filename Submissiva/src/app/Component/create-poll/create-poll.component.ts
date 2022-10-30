@@ -125,10 +125,13 @@ export class CreatePollComponent implements OnInit {
           isActive: new FormControl(true),
           vote1Active: new FormControl(true),
           vote2Active: new FormControl(true),
+          voteUsers1: new FormControl(['']),
+          voteUsers2: new FormControl(['']),
         });
         // console.log(this.createdPoll.value);
         this.pService.createNewPoll(this.createdPoll.value);
         window.alert('Poll created!');
+        this.router.navigate(['/all-polls']);
         // console.log(this.pollList);
         this.pollList = [];
         // console.log(this.pollList);

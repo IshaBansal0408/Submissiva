@@ -46,7 +46,8 @@ export class CreateIdeaComponent implements OnInit {
     this.addIdea.value.ideaDownvotes = 0;
     this.addIdea.value.createdAt = new Date().toLocaleDateString();
     console.log(this.addIdea.value.createdAt);
-
+    this.addIdea.value.upvotedUser = [''];
+    this.addIdea.value.downvotedUser = [''];
     console.log(this.addIdea.value);
     this.ideaService.createIdea(this.addIdea.value);
     window.alert('Idea Added Successfully!');

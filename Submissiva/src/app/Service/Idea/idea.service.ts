@@ -70,4 +70,22 @@ export class IdeaService {
   getAllIdeasByCategory(cat: any) {
     return this.firestore.collection('idea-collection').doc(cat).valueChanges();
   }
+
+  adduser2upvote(idea: Idea, id: any, userName: any) {
+    return this.firestore
+      .collection('idea-collection')
+      .doc(id)
+      .update({
+        upvotedUser: idea.upvotedUser.concat(userName),
+      });
+  }
+
+  adduser2downvote(idea: Idea, id: any, userName: any) {
+    return this.firestore
+      .collection('idea-collection')
+      .doc(id)
+      .update({
+        downvotedUser: idea.downvotedUser.concat(userName),
+      });
+  }
 }

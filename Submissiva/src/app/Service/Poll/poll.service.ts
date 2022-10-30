@@ -64,4 +64,22 @@ export class PollService {
       .doc(id)
       .update({ pollVotes2: poll.pollVotes2 + 1 });
   }
+
+  adduser2vote1(poll: Poll, id: any, userName: any) {
+    return this.firestore
+      .collection('poll-collection')
+      .doc(id)
+      .update({
+        voteUsers1: poll.voteUsers1.concat(userName),
+      });
+  }
+
+  adduser2vote2(poll: Poll, id: any, userName: any) {
+    return this.firestore
+      .collection('poll-collection')
+      .doc(id)
+      .update({
+        voteUsers2: poll.voteUsers2.concat(userName),
+      });
+  }
 }

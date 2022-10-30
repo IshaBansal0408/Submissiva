@@ -30,9 +30,36 @@ export class AllIdeasComponent implements OnInit {
   }
 
   upvoteIdea(i: any) {
-    this.ideaService.upvoteIdea(i, i.id);
+    var temp = this.user.userName;
+    console.log('Value of upvoted users before: ', i.upvotedUser);
+    if (i.upvotedUser.includes(temp)) {
+      console.log('present');
+      window.alert('You have already upvoted this idea!');
+    } else if (i.downvotedUser.includes(temp)) {
+      console.log('present');
+      window.alert('You have already downvoted this idea!');
+    } else {
+      console.log('not present!');
+      this.ideaService.upvoteIdea(i, i.id);
+      this.ideaService.adduser2upvote(i, i.id, temp);
+    }
+
+    console.log('Value of upvoted users after: ', i.upvotedUser);
   }
   downvoteIdea(i: any) {
-    this.ideaService.downvoteIdea(i, i.id);
+    var temp = this.user.userName;
+    console.log('Value of downvoted users before: ', i.downvotedUser);
+    if (i.downvotedUser.includes(temp)) {
+      console.log('present');
+      window.alert('You have already downvoted this idea!');
+    } else if (i.upvotedUser.includes(temp)) {
+      console.log('present');
+      window.alert('You have already upvoted this idea!');
+    } else {
+      console.log('not present!');
+      this.ideaService.downvoteIdea(i, i.id);
+      this.ideaService.adduser2downvote(i, i.id, temp);
+    }
+    console.log('Value of downvoted users after: ', i.downvotedUser);
   }
 }

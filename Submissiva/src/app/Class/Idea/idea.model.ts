@@ -8,4 +8,7 @@ export class Idea {
   ideaUpvotes!: number;
   ideaDownvotes!: number;
   createdAt!: string;
+
+  upvotedUser!: Array<string>;
+  downvotedUser!: Array<string>;
 }

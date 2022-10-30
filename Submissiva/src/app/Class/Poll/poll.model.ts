@@ -12,4 +12,7 @@ export class Poll {
   pollWinner!: string;
   vote1Active!: boolean;
   vote2Active!: boolean;
+
+  voteUsers1!: Array<string>;
+  voteUsers2!: Array<string>;
 }

@@ -28,10 +28,36 @@ export class AllPollsComponent implements OnInit {
   }
 
   voteIdea1(p: any) {
-    this.pService.voteIdea1(p, p.id);
+    var temp = this.user.userName;
+    console.log('Value of voted users before: ', p.voteUsers1);
+    if (p.voteUsers1.includes(temp)) {
+      console.log('present');
+      window.alert('You have already voted ' + p.pollItem1.ideaName + ' !');
+    } else if (p.voteUsers2.includes(temp)) {
+      console.log('present');
+      window.alert('You have already voted ' + p.pollItem2.ideaName + ' !');
+    } else {
+      console.log('not present!');
+      this.pService.adduser2vote1(p, p.id, temp);
+      this.pService.voteIdea1(p, p.id);
+    }
+    console.log('Value of voted users after: ', p.voteUsers1);
   }
   voteIdea2(p: any) {
-    this.pService.voteIdea2(p, p.id);
+    var temp = this.user.userName;
+    console.log('Value of voted users before: ', p.voteUsers2);
+    if (p.voteUsers1.includes(temp)) {
+      console.log('present');
+      window.alert('You have already voted ' + p.pollItem1.ideaName + ' !');
+    } else if (p.voteUsers2.includes(temp)) {
+      console.log('present');
+      window.alert('You have already voted ' + p.pollItem2.ideaName + ' !');
+    } else {
+      console.log('not present!');
+      this.pService.adduser2vote2(p, p.id, temp);
+      this.pService.voteIdea2(p, p.id);
+    }
+    console.log('Value of voted users after: ', p.voteUsers2);
   }
 
   endPoll(poll: Poll) {
