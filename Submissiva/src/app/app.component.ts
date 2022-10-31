@@ -100,4 +100,19 @@ export class AppComponent {
   //     this.router.navigate(['/login']);
   //   }
   // }
+
+  update_btn() {
+    try {
+      this.user = JSON.parse(localStorage.getItem('user')!);
+      if (this.user.role == null) {
+        window.alert('Please Login First!');
+        this.router.navigate(['/login']);
+      } else {
+        this.router.navigate(['/edit-user/' + this.user.id]);
+      }
+    } catch (error) {
+      window.alert('Please Login First!');
+      this.router.navigate(['/login']);
+    }
+  }
 }
